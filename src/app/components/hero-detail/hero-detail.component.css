@@ -1,0 +1,20 @@
+.details {
+  padding: 20px 0px;
+}
+
+.hero-component {
+  padding: 20px;
+  background-color: rgb(187, 184, 184);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.hero-property {
+  padding: 10px;
+}
+
+input {
+  border-radius: 3px;
+  border: 2px solid rgb(100, 100, 100);
+  padding: 10px;
+}
