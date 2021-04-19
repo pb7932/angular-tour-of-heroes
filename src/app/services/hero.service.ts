@@ -6,6 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
 import { MessageService} from './message.service';
+import { templateJitUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +30,6 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    /*
-    const heroes = of(HEROES);
-    this.messageService.add('HeroService: fetched heroes');
-    return heroes;
-    */
    return this.http.get<Hero[]>(this.heroesUrl)
               .pipe(
                 tap(_ => this.log('fetched heroes')),
@@ -63,6 +59,18 @@ export class HeroService {
       catchError(this.handleError<Hero>('deletedHero'))
     );
   }
+
+  searchHeroes(term: string): Observable<Hero[]> {
+    if(!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(x => x.length ? this.log(`found heroes matching the term: ${term}`) :
+                          this.log(`no heroes are matching the term: ${term}`)),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
+  }
+
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
