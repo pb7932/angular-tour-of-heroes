@@ -1,1 +1,12 @@
-<p>crisis-list works!</p>
+<div>
+    <ul>
+        <li *ngFor="let crisis of crises">
+            <a routerLink="/crisis-center/{{crisis.id}}">
+                <span class="bagde">{{ crisis.id }}</span>
+                <span class="crisis-name">{{ crisis.name }}</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<router-outlet></router-outlet>

@@ -11,10 +11,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
-import { CrisisCenterComponent } from './crisis-center/crisis-center/crisis-center.component';
-import { CrisisCenterHomeComponent } from './crisis-center/crisis-center-home/crisis-center-home.component';
-import { CrisisDetailComponent } from './crisis-center/crisis-detail/crisis-detail.component';
-import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 
@@ -25,10 +21,6 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    CrisisCenterComponent,
-    CrisisCenterHomeComponent,
-    CrisisDetailComponent,
-    CrisisListComponent,
     ErrorPageComponent
   ],
   imports: [
@@ -37,6 +29,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     HeroesModule,
+    CrisisCenterModule,
     AppRoutingModule,
     CrisisCenterModule
   ],

@@ -1,0 +1,28 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+li a {
+  width: 40%;
+  display: block;
+  background-color: rgb(80, 67, 67);
+  padding: 10px;
+  color: rgb(231, 220, 220);
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+}
+
+li a:hover {
+  background-color: rgb(110, 97, 97);
+}
+
+.bagde {
+  padding-right: 2rem;
+}
