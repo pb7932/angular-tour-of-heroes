@@ -13,6 +13,7 @@ import { HeroesModule } from './heroes/heroes.module';
 import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ComposeMessageComponent
   ],
   imports: [
     BrowserModule,
