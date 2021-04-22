@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { Hero } from '../hero';
 import { HeroService } from '../services/hero.service';
@@ -14,7 +17,8 @@ export class HeroesComponent implements OnInit{
   heroes: Hero[] = [];
 
   constructor(private heroService: HeroService
-             ,private messageService : MessageService) { }
+             ,private messageService : MessageService
+             ,private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getHeroes();

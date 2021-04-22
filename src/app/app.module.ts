@@ -9,10 +9,13 @@ import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { HeroesComponent } from './heroes/heroes/heroes.component';
-import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
+import { CrisisCenterComponent } from './crisis-center/crisis-center/crisis-center.component';
+import { CrisisCenterHomeComponent } from './crisis-center/crisis-center-home/crisis-center-home.component';
+import { CrisisDetailComponent } from './crisis-center/crisis-detail/crisis-detail.component';
+import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 
 @NgModule({
@@ -20,7 +23,11 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
     AppComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    CrisisCenterComponent,
+    CrisisCenterHomeComponent,
+    CrisisDetailComponent,
+    CrisisListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,8 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     HeroesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CrisisCenterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
