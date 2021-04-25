@@ -15,4 +15,9 @@ export class CrisisService {
     const crises = of(CRISES);
     return crises;
   }
+
+  getCrisis(id: number): Observable<Crisis> {
+    const crisis = CRISES.find(c => c.id == id) as Crisis;
+    return of(crisis);
+  }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Crisis } from '../crisis';
+import { CrisisService } from '../services/crisis-service.service';
 
 @Component({
   selector: 'app-crisis-detail',
@@ -6,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crisis-detail.component.css']
 })
 export class CrisisDetailComponent implements OnInit {
+  crisis: Crisis;
 
-  constructor() { }
+  constructor(private crisisService: CrisisService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getCrisis();
   }
 
+  getCrisis(): void {
+    let crisisId = Number(this.route.snapshot.paramMap.get('id'));
+    this.crisisService.getCrisis(crisisId)
+        .subscribe(crisis => this.crisis = crisis);
+  }
 }

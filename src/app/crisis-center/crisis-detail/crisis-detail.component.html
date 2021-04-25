@@ -1,1 +1,8 @@
-<p>crisis-detail works!</p>
+<div *ngIf="crisis" class="crisis-details">
+    <h2 class="crisis-name">{{crisis.name}} Details</h2>
+    <div class="crisis-id"><span >id: {{crisis.id}}</span></div>
+   <div>
+       <label for="crisis-name">Crisis name: </label>
+        <input id="crisis-name" [(ngModel)]="crisis.name">
+   </div>
+</div>
