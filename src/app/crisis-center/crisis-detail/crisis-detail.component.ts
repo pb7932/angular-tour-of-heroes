@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { Crisis } from '../crisis';
 import { CrisisService } from '../services/crisis-service.service';
@@ -10,7 +12,7 @@ import { CrisisService } from '../services/crisis-service.service';
   styleUrls: ['./crisis-detail.component.css']
 })
 export class CrisisDetailComponent implements OnInit {
-  crisis: Crisis;
+  crisis$: Observable<Crisis>;
 
   constructor(private crisisService: CrisisService,
               private route: ActivatedRoute) { }
@@ -20,8 +22,9 @@ export class CrisisDetailComponent implements OnInit {
   }
 
   getCrisis(): void {
-    let crisisId = Number(this.route.snapshot.paramMap.get('id'));
-    this.crisisService.getCrisis(crisisId)
-        .subscribe(crisis => this.crisis = crisis);
+    this.crisis$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+      this.crisisService.getCrisis(Number(params.get('id'))))
+    );
   }
 }
