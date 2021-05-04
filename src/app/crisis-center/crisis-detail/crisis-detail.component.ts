@@ -32,10 +32,17 @@ export class CrisisDetailComponent implements OnInit {
       this.crisisService.getCrisis(Number(params.get('id'))))
     );
     */
-
+    
+    /*
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.crisisService.getCrisis(id)
         .subscribe(crisis => this.crisis = crisis);
+    */
+
+    this.route.data.subscribe( ( data: { crisis: Crisis } ) => {
+      this.editName = data.crisis.name;
+      this.crisis = data.crisis;
+    });
   }
 
   cancel() {
