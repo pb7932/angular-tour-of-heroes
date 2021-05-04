@@ -14,6 +14,7 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
@@ -32,8 +33,8 @@ import { ComposeMessageComponent } from './components/compose-message/compose-me
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     HeroesModule,
     CrisisCenterModule,
-    AppRoutingModule,
-    CrisisCenterModule
+    AdminModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
