@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 
 import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
 import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
@@ -17,7 +18,8 @@ const crisisCenterRoutes: Routes = [
        children: [
           {
            path: ':id',
-           component: CrisisDetailComponent
+           component: CrisisDetailComponent,
+           canDeactivate: [CanDeactivateGuard]
          },
          {
            path: '',

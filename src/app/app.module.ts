@@ -26,7 +26,6 @@ import { AuthModule } from './auth/auth.module';
     HeroSearchComponent,
     ErrorPageComponent,
     ComposeMessageComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
