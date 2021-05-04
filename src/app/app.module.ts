@@ -15,6 +15,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
 import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AdminModule } from './admin/admin.module';
     DashboardComponent,
     HeroSearchComponent,
     ErrorPageComponent,
-    ComposeMessageComponent
+    ComposeMessageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { AdminModule } from './admin/admin.module';
     HeroesModule,
     CrisisCenterModule,
     AdminModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],
