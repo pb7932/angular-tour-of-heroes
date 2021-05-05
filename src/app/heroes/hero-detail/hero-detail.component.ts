@@ -33,7 +33,7 @@ export class HeroDetailComponent implements OnInit {
 
   goBack(): void {
     const heroId = this.hero ? this.hero.id : null;
-    this.router.navigate(['/heroes', {id: heroId}]);
+    this.router.navigate(['/superheroes', {id: heroId}]);
   }
 
   save(): void {
