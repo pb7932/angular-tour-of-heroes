@@ -14,7 +14,6 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
-import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 
 
@@ -34,7 +33,6 @@ import { AuthModule } from './auth/auth.module';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     HeroesModule,
     CrisisCenterModule,
-    AdminModule,
     AuthModule,
     AppRoutingModule
   ],
