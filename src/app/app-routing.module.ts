@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 
 import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
@@ -17,13 +17,24 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     canLoad: [AuthGuard]
   },
+  {
+    path: 'crisis-center',
+    loadChildren: () => import('./crisis-center/crisis-center.module').then(m => m.CrisisCenterModule)
+  },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: '**', component: ErrorPageComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(
+    routes,
+    {
+      enableTracing: true,
+      preloadingStrategy: PreloadAllModules
+    }
+    )
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
